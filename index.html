@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AS PRO DOWNLOADER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #000; color: white; font-family: 'Inter', sans-serif; }
+        .vip-card { background: linear-gradient(145deg, #111, #000); border: 1px solid #333; box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.2); }
+        .glow-text { text-shadow: 0 0 15px rgba(236, 72, 153, 0.6); }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md">
+        <div class="text-center mb-10">
+            <h1 class="text-5xl font-black italic tracking-tighter glow-text italic">
+                AS <span class="text-pink-500 underline decoration-white">PRO</span>
+            </h1>
+            <p class="text-[10px] tracking-[0.5em] text-gray-500 font-bold mt-2">PREMIUM DOWNLOADER v3.0</p>
+        </div>
+
+        <div class="vip-card p-8 rounded-[3rem]">
+            <input type="text" id="videoUrl" placeholder="Paste Link Here..." 
+                class="w-full bg-white/5 border-b-2 border-pink-500/30 p-4 rounded-xl focus:outline-none focus:border-pink-500 transition-all text-center mb-6">
+            
+            <button onclick="startDownload()" 
+                class="w-full bg-white text-black p-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-pink-500 hover:text-white transition-all duration-500 shadow-xl">
+                🚀 START BYPASSING
+            </button>
+        </div>
+
+        <p class="text-center mt-12 text-[9px] text-gray-600 uppercase tracking-widest font-bold">
+            Powered by AS Enterprises New Delhi
+        </p>
+    </div>
+
+    <script>
+        function startDownload() {
+            const url = document.getElementById('videoUrl').value;
+            if(!url) return alert("Bhai, pehle link toh dalo!");
+
+            // VIP Logic: Ye system block nahi hota
+            // Ye Instagram, YouTube aur FB sab ke liye alag server bypass karega
+            let bypassUrl = "";
+            
+            if(url.includes("instagram.com")) {
+                bypassUrl = "https://saveig.app/en/download?url=" + encodeURIComponent(url);
+            } else if(url.includes("facebook.com") || url.includes("fb.watch")) {
+                bypassUrl = "https://fdown.net/download.php?url=" + encodeURIComponent(url);
+            } else if(url.includes("youtube.com") || url.includes("youtu.be")) {
+                bypassUrl = "https://y2mate.com/search/" + encodeURIComponent(url);
+            } else {
+                // All in one backup
+                bypassUrl = "https://en.savefrom.net/1-youtube-video-downloader-360.html?url=" + encodeURIComponent(url);
+            }
+
+            // Nayi window mein khulega bina error ke
+            window.open(bypassUrl, "_blank");
+        }
+    </script>
+</body>
+</html>
